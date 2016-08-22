@@ -5,13 +5,14 @@ var app = express();
 //const PORT = port.env.PORT || 3000;
 const PORT = 3000;
 
-app.use(function (req, res, next) {
-  if (req.haders['x-forwarded-proto'] == 'http') {
-    next();
-  } else {
-    res.redirect('http:// + req.hostname + req.url')
-  }
-});
+
+// app.use(function (req, res, next) {
+//   if (req.haders['x-forwarded-proto'] == 'https') {
+//     res.redirect('http:// + req.hostname + req.url')
+//   } else {
+//     next();
+//   }
+// });
 
 app.use(express.static('public'));
 
